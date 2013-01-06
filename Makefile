@@ -19,7 +19,7 @@ C_FILES := $(wildcard $(ARDUINO_HOME)/hardware/arduino/cores/arduino/*.c)
 C_OBJS = $(patsubst %.c,%.o,$(C_FILES))
 
 CPP_FILES := $(wildcard $(ARDUINO_HOME)/hardware/arduino/cores/arduino/*.cpp)
-# We'll implement this in our main.c instead
+# We'll implement this in our main.cpp instead
 CPP_FILES := $(filter-out $(ARDUINO_HOME)/hardware/arduino/cores/arduino/main.cpp, $(CPP_FILES))
 CPP_OBJS = $(patsubst %.cpp,%.o,$(CPP_FILES))
 
@@ -47,7 +47,7 @@ libcore.a: $(C_OBJS) $(CPP_OBJS)
 		$(AR) rcs $@ $$o; \
 	done
 
-main.elf: main.c libcore.a
+main.elf: main.cpp libcore.a
 	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $< libcore.a
 
 main: main.elf
