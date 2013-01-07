@@ -27,7 +27,7 @@ How to
 4. Edit the `Makefile` file to suit your environment
 	There are two variables that you will need to edit:
 	* `ARDUINO_HOME`: the path where you untarred the IDE in step
-	1. (e.g. /home/user/arduino_ide)
+	1) (e.g. /home/user/arduino_ide)
 	* `SERIAL`: the path where your arduino listens on. If you
 	don't know which one, try plugging and unplugging the board,
 	and check how the files in `/dev/` differ
